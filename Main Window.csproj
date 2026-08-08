@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RootNamespace>Main_Window</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Config Circle.png" />
+    <None Remove="Images\Configs.png" />
+    <None Remove="Images\Friends.png" />
+    <None Remove="Images\Home.png" />
+    <None Remove="Images\Info.png" />
+    <None Remove="Images\Library.png" />
+    <None Remove="Images\Logo.ico" />
+    <None Remove="Images\Logo.png" />
+    <None Remove="Images\Messages.png" />
+    <None Remove="Images\Quit.png" />
+    <None Remove="Images\Search.png" />
+    <None Remove="Images\Selection.png" />
+    <None Remove="Images\Shop.png" />
+    <None Remove="Images\Wishlist.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Config Circle.png" />
+    <Resource Include="Images\Configs.png" />
+    <Resource Include="Images\Friends.png" />
+    <Resource Include="Images\Home.png" />
+    <Resource Include="Images\Info.png" />
+    <Resource Include="Images\Library.png" />
+    <Resource Include="Images\Logo.ico" />
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\Messages.png" />
+    <Resource Include="Images\Quit.png" />
+    <Resource Include="Images\Search.png" />
+    <Resource Include="Images\Selection.png" />
+    <Resource Include="Images\Shop.png" />
+    <Resource Include="Images\Wishlist.png" />
+  </ItemGroup>
+
+</Project>

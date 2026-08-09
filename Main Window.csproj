@@ -19,6 +19,8 @@
     <None Remove="Images\Logo.ico" />
     <None Remove="Images\Logo.png" />
     <None Remove="Images\Messages.png" />
+    <None Remove="Images\PFP.jpg" />
+    <None Remove="Images\PFP.png" />
     <None Remove="Images\Quit.png" />
     <None Remove="Images\Search.png" />
     <None Remove="Images\Selection.png" />
@@ -36,6 +38,7 @@
     <Resource Include="Images\Logo.ico" />
     <Resource Include="Images\Logo.png" />
     <Resource Include="Images\Messages.png" />
+    <Resource Include="Images\PFP.png" />
     <Resource Include="Images\Quit.png" />
     <Resource Include="Images\Search.png" />
     <Resource Include="Images\Selection.png" />

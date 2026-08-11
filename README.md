@@ -32,6 +32,8 @@
       </ul>
     <li><a href="#changelog">Changelog</a></li>
     <ul>
+      <li><a href="#latest-update">Latest Update</a></li>
+      <li><a href="#previous-update">Previous Update</a></li>
       <li><a href="#improved">improved</a></li>
     </ul>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -58,7 +60,7 @@ Slowpoke is currently in the early prototyping stage. The main focus is on build
 
 <!-- GIF FROM NOW -->
 
-<img width="408" height="318.5" alt="image" src="https://github.com/user-attachments/assets/ee6e8fb3-00ac-413b-8fb7-9a99ba8f0ae4" />
+<img width="397" height="304.5" alt="image" src="https://github.com/user-attachments/assets/9d9cc13d-ea67-4f31-a254-73bc9a8ff063" />
 
 The current prototype includes the sidebar, Home page navigation, animated selection indicators, and the initial Home layout.
 <br>
@@ -94,7 +96,7 @@ Sidebar:
 Home Section:
 - Page title.
 - Stylized header buttons.
-- Profile Picture
+- Profile Picture Popup.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -104,7 +106,30 @@ Home Section:
 
 <!-- Version -->
 
-### Pre-Release v1.0.0-Beta.1
+### Latest Update
+
+<h3>Pre-Release v0.2.0-alpha.2.0</h3>
+
+General:
+- Changed the application name to "Slowpoke Launcher".
+
+Sidebar:
+- Changed the Configs button to RadioButton.
+- Extended the Selection Indicator to include Configs Button.
+
+Home Section:
+- Replaced the profile picture with a button that opens a profile popup.
+- Added an option for changing the username.
+
+For more detailed information, see the commit [ef9d055](https://github.com/FelipeSelhorst/Game-Launcher/commit/ef9d0551b28ec9fa79e78f68df0d034a0d594ebf)
+
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
+<br>
+<br>
+
+### Previous Update
+
+<h3>Pre-Release v0.1.0-alpha.1.0</h3>
 
 Sidebar:
 - Changed the "Group 1: Home and Library" Buttons to RadioButtons for page navigation.
@@ -146,7 +171,7 @@ Home Section:
 - [ ] Wishlist Pop-Up
 - [ ] Friends Pop-Up
 - [ ] Configs Button
-  - [ ] Turn into RadioButton
+  - [x] Turn into RadioButton
 - [x] Exit Button
 - [x] Selection Indicator
 
@@ -156,7 +181,7 @@ Home Section:
   - [x] Main Buttons
   - [ ] Selection Indicator
   - [ ] Round the Profile Picture and add a border
-  - [ ] Profile Pop-Up
+  - [x] Profile Pop-Up
 
 ### Pages
 - [ ] Implement Library
@@ -172,8 +197,9 @@ Home Section:
 - Page navigation is not fully implemented.
 - 4 sidebar buttons are not functional yet.
 - The Profile Picture is not properly rounded.
-- The logo and application name are still placeholders.
-- The Configs button needs to be converted to a RadioButton and connected to its own page.
+- The application logo is still a placeholder.
+- The "SaveProfile" property is under development and does not work yet.
+- The Profile Popup options are not displayed correctly.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 

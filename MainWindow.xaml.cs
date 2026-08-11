@@ -1,8 +1,10 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.Win32;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -47,7 +49,7 @@ namespace Main_Window
             OpenApp(@"C:\Users\selho\AppData\Local\Discord\app-1.0.9251\Discord.exe");
 
         private void Configs_Click(object sender, RoutedEventArgs e) =>
-            OpenApp(@"C:\Program Files\WindowsApps\Microsoft.WindowsNotepad_11.2605.34.0_x64__8wekyb3d8bbwe\Notepad\Notepad.exe");
+            MoveSelection(ConfigsButton);
 
         private void OpenApp(string path)
         {
@@ -109,6 +111,34 @@ namespace Main_Window
                 TranslateTransform.YProperty,
                 animation
             );
+        }
+
+        private void ProfilePopUp(object sender, RoutedEventArgs e)
+        {
+            ProfilePopup.IsOpen = true;
+        }
+
+        private void ChangeProfilePicture(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Title = "Choose a profile picture",
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                ProfileImage.Source = new BitmapImage(
+                    new Uri(dialog.FileName)
+                );
+            }
+        }
+
+        private void SaveProfile(object sender, RoutedEventArgs e)
+        {
+            //string name = NameTextBox.Text;
+            // Implement saving profile logic here
+            ProfilePopup.IsOpen = false;
         }
     }
 }

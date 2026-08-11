@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Main_Window"
         mc:Ignorable="d"
         Icon="/Images/Logo.ico"
-        Title="Launcher" Height="609" Width="801"
+        Title="Slowpoke Launcher" Height="609" Width="801"
         Background="#0C0C0F" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
@@ -88,8 +88,8 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="border"
-                    Background="{TemplateBinding Background}"
-                    CornerRadius="4">
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="4">
 
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
@@ -330,11 +330,11 @@
                      VerticalAlignment="Center"
                      Height="63">
 
-            <Button x:Name="ConfigsButton"
-                    Style="{StaticResource IconButton}"
+            <RadioButton x:Name="ConfigsButton"
+                    Style="{StaticResource IconRadioButton}"
                     Click="Configs_Click">
                 <Image Source="/Images/Configs.png" Width="15" Height="15"/>
-            </Button>
+            </RadioButton>
 
             <Button x:Name="QuitButton"
                     Style="{StaticResource IconButton}"
@@ -402,13 +402,50 @@
                      Style="{StaticResource MainButtons}"
                      GroupName="MainButtons"/>
         
-        <!-- Profile Icon -->
-        <Image Grid.Column="3"
-               Grid.Row="0"
-               Width="42"
-               Height="42"
-               HorizontalAlignment="Right"
-               Margin="0,0,30,0"
-               Source="/Images/PFP.png"/>
+        <!-- Profile Picture -->
+
+        <Button x:Name="ProfileButton"
+                Click="ProfilePopUp"
+                Grid.Column="3"
+                Grid.Row="0"
+                Width="42"
+                Height="42"
+                HorizontalAlignment="Right"
+                Margin="0,0,30,0">
+            <Popup x:Name="ProfilePopup"
+                   PlacementTarget="{Binding ElementName=ProfileButton}"
+                   StaysOpen="False">
+                
+                <Border Background="#0C0C0F"
+                        Width="215"
+                        Height="70"
+                        Padding="15"
+                        CornerRadius="10"
+                        BorderThickness="2"
+                        BorderBrush="#FF0066">
+
+                    <StackPanel>
+                        <Border Width="100"
+                                Height="100"
+                                CornerRadius="5"
+                                ClipToBounds="True"
+                                HorizontalAlignment="Center"
+                                MouseLeftButtonUp="ChangeProfilePicture">
+                            <Image x:Name="ProfileImage"
+                                   Stretch="UniformToFill"/>
+                        </Border>
+
+                            <TextBlock Text="Name"
+                                       Foreground="White"
+                                       Margin="0,15,0,5"/>
+                            
+                            <Button Content="Save"
+                                    Margin="0,15,0,0"
+                                    Click="SaveProfile"/>
+
+                    </StackPanel>
+                </Border>
+            </Popup>
+        </Button>
     </Grid>
 </Window>

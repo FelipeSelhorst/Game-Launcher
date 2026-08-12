@@ -10,8 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Montserrat-Regular.ttf" />
     <None Remove="Images\Config Circle.png" />
     <None Remove="Images\Configs.png" />
+    <None Remove="Images\decorative-ornamental-square-frame-border-with-geometric-lines-nouveau-style-design_1226483-13519.avif" />
     <None Remove="Images\Friends.png" />
     <None Remove="Images\Home.png" />
     <None Remove="Images\Info.png" />
@@ -25,10 +27,16 @@
     <None Remove="Images\Search.png" />
     <None Remove="Images\Selection.png" />
     <None Remove="Images\Shop.png" />
+    <None Remove="Images\square.avif" />
+    <None Remove="Images\square.jpg" />
+    <None Remove="Images\white square.jpg" />
     <None Remove="Images\Wishlist.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Montserrat-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Config Circle.png" />
     <Resource Include="Images\Configs.png" />
     <Resource Include="Images\Friends.png" />
@@ -43,6 +51,7 @@
     <Resource Include="Images\Search.png" />
     <Resource Include="Images\Selection.png" />
     <Resource Include="Images\Shop.png" />
+    <Resource Include="Images\square.jpg" />
     <Resource Include="Images\Wishlist.png" />
   </ItemGroup>
 

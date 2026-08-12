@@ -118,27 +118,42 @@ namespace Main_Window
             ProfilePopup.IsOpen = true;
         }
 
-        private void ChangeProfilePicture(object sender, MouseButtonEventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog
-            {
-                Title = "Choose a profile picture",
-                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
-            };
+        //private void ChangeProfilePicture(object sender, MouseButtonEventArgs e)
+        //{
+        //    OpenFileDialog dialog = new OpenFileDialog
+        //    {
+        //        Title = "Choose a profile picture",
+        //        Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+        //    };
 
-            if (dialog.ShowDialog() == true)
-            {
-                ProfileImage.Source = new BitmapImage(
-                    new Uri(dialog.FileName)
-                );
-            }
-        }
+        //    if (dialog.ShowDialog() == true)
+        //    {
+        //        ProfileImage.Source = new BitmapImage(
+        //            new Uri(dialog.FileName)
+        //        );
+        //    }
+        //}
 
         private void SaveProfile(object sender, RoutedEventArgs e)
         {
-            //string name = NameTextBox.Text;
+            // string name = NameTextBox.Text;
             // Implement saving profile logic here
             ProfilePopup.IsOpen = false;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (sender as TextBox)!;
+
+            if (textBox != null)
+            {
+                string CurrentText = textBox.Text;
+            }
+        }
+
+        private void Application_Activated(object sender, EventArgs e)
+        {
+
         }
     }
 }

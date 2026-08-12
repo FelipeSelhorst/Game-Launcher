@@ -10,6 +10,7 @@
         Background="#0C0C0F" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
+        <FontFamily x:Key="Montserrat">pack://application:,,,/Fonts/Montserrat-Regular.ttf</FontFamily>
         
         <!-- Radio Button Style -->
         <Style x:Key="IconRadioButton" TargetType="{x:Type RadioButton}">
@@ -136,11 +137,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
-        <Style x:Key="Montserrat-Regular">
-            <Setter Property="TextElement.FontFamily"
-                    Value="C:\Users\selho\source\repos\Main Window\Fonts\Montserrat.zip"/>
-        </Style>
 
         <Style x:Key="SmallIconButton" BasedOn="{StaticResource IconButton}" TargetType="Button">
             <Setter Property="Width" Value="20"/>
@@ -152,10 +148,10 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Width" Value="120"/>
             <Setter Property="Height" Value="32"/>
-            <Setter Property="FontFamily" Value="Montserrat"/>
-            <Setter Property="FontSize" Value="12"/>
             <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="Cursor" Value="Hand"/>
             
             <Setter Property="Template">
@@ -189,8 +185,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="62"/>
             <ColumnDefinition Width="166"/>
-            <ColumnDefinition Width="402"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="168"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -408,44 +404,75 @@
                 Click="ProfilePopUp"
                 Grid.Column="3"
                 Grid.Row="0"
-                Width="42"
-                Height="42"
                 HorizontalAlignment="Right"
+                Width="50"
+                Height="50"
                 Margin="0,0,30,0">
-            <Popup x:Name="ProfilePopup"
-                   PlacementTarget="{Binding ElementName=ProfileButton}"
-                   StaysOpen="False">
-                
-                <Border Background="#0C0C0F"
-                        Width="215"
-                        Height="70"
-                        Padding="15"
-                        CornerRadius="10"
-                        BorderThickness="2"
-                        BorderBrush="#FF0066">
-
-                    <StackPanel>
-                        <Border Width="100"
-                                Height="100"
-                                CornerRadius="5"
-                                ClipToBounds="True"
-                                HorizontalAlignment="Center"
-                                MouseLeftButtonUp="ChangeProfilePicture">
-                            <Image x:Name="ProfileImage"
-                                   Stretch="UniformToFill"/>
-                        </Border>
-
-                            <TextBlock Text="Name"
-                                       Foreground="White"
-                                       Margin="0,15,0,5"/>
-                            
-                            <Button Content="Save"
-                                    Margin="0,15,0,0"
-                                    Click="SaveProfile"/>
-
-                    </StackPanel>
-                </Border>
-            </Popup>
+            <Image Source="/Images/PFP.png"/>
         </Button>
+
+        <Popup x:Name="ProfilePopup"
+               PlacementTarget="{Binding ElementName=ProfileButton}"
+               StaysOpen="False"
+               AllowsTransparency="True">
+            
+            <Border Background="#0C0C0F"
+                    BorderBrush="#FF0066"
+                    BorderThickness="2"
+                    Width="230"
+                    Height="80"
+                    CornerRadius="10">
+
+                <Grid Margin="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="63"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="/Images/PFP.png"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           Width="48"
+                           Grid.RowSpan="2"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"/>
+
+                    <TextBlock Foreground="White"
+                               Text="Name"
+                               Grid.Column="1"
+                               Grid.Row="0"
+                               HorizontalAlignment="Left"
+                               Margin="10,0,0,0"
+                               FontFamily="Montserrat"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+
+                    <Border Background="#1F1F27"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Width="133"
+                            Height="26"
+                            HorizontalAlignment="Left"
+                            CornerRadius="10">
+                        
+                        <TextBox x:Name="NameInput"
+                                 Foreground="Black"
+                                 VerticalAlignment="Center"
+                                 TextChanged="TextBox_TextChanged"
+                                 Width="133"
+                                 Height="26"
+                                 Padding="5,0,0,0"
+                                 VerticalContentAlignment="Center"
+                                 FontFamily="Montserrat"
+                                 FontSize="14"
+                                 FontWeight="SemiBold"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Popup>
     </Grid>
 </Window>

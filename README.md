@@ -60,14 +60,12 @@ Slowpoke is currently in the early prototyping stage. The main focus is on build
 
 <!-- GIF FROM NOW -->
 
-<img width="397" height="304.5" alt="image" src="https://github.com/user-attachments/assets/9d9cc13d-ea67-4f31-a254-73bc9a8ff063" />
-
+<img width="397" height="304.5" alt="image" src="https://github.com/user-attachments/assets/6d2b1e53-f9d7-43ec-8bd8-831b43dd1b51"/><br>
 The current prototype includes the sidebar, Home page navigation, animated selection indicators, and the initial Home layout.
 <br>
 <br>
 <br>
-<img width="400.5" height="304.5" alt="Home" src="https://github.com/user-attachments/assets/c49c8c4e-e340-4a39-b294-e11899a19a07"/>
-
+<img width="400.5" height="304.5" alt="Home" src="https://github.com/user-attachments/assets/c49c8c4e-e340-4a39-b294-e11899a19a07"/><br>
 *Early home page prototype. Some elements shown are planned rather than implemented.*
 
 <!-- CORRECT USAGE -->
@@ -96,7 +94,9 @@ Sidebar:
 Home Section:
 - Page title.
 - Stylized header buttons.
-- Profile Picture Popup.
+- Profile Popup.
+- Option to change the username.
+- New font added.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -107,6 +107,33 @@ Home Section:
 <!-- Version -->
 
 ### Latest Update
+
+<h3>Pre-Release v0.2.1-alpha.3.0</h3>
+
+General:
+- Added the font "Montserrat" to the project.
+
+Home Section:
+- Changed the page title and buttons font.
+- Corrected the column widths.
+- Corrected the issue where the profile button was not displaying the image correctly.
+
+Profile Popup:
+
+/// The previous lines regarding the popup did not work, so they were deleted. ///
+- Corrected the issue where the popup was not displaying anything.
+- Increased the size.
+- Added columns and rows.
+- Added the profile picture to the left.
+- Added a `<TextBlock>` to label the "Name" field.
+- Added an input to change the username.
+
+For more detailed information, read the commit [bb76571](https://github.com/FelipeSelhorst/Game-Launcher/commit/bb76571b9d385b8a011cbb6eb45701c6bab67125)
+
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
+<br>
+
+### Previous Update
 
 <h3>Pre-Release v0.2.0-alpha.2.0</h3>
 
@@ -121,29 +148,7 @@ Home Section:
 - Replaced the profile picture with a button that opens a profile popup.
 - Added an option for changing the username.
 
-For more detailed information, see the commit [ef9d055](https://github.com/FelipeSelhorst/Game-Launcher/commit/ef9d0551b28ec9fa79e78f68df0d034a0d594ebf)
-
-<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
-<br>
-<br>
-
-### Previous Update
-
-<h3>Pre-Release v0.1.0-alpha.1.0</h3>
-
-Sidebar:
-- Changed the "Group 1: Home and Library" Buttons to RadioButtons for page navigation.
-- Added new styles and animations for the different button types.
-- Limited the Selection Indicator only to the Group 1 buttons.
-- Adjusted the size and position of the Selection Indicator.
-
-Home Section:
-- Added the page title.
-- Added main header buttons.
-- Created new border and selection effects and animations.
-- Added a profile picture.
-
-For more detailed information, see the commit [03e559c](https://github.com/FelipeSelhorst/Game-Launcher/commit/03e559ce90097e843fb7b1cbb4868f86ad722378).
+For more detailed information, see the commit [ef9d055](https://github.com/FelipeSelhorst/Game-Launcher/commit/ef9d0551b28ec9fa79e78f68df0d034a0d594ebf).
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -151,12 +156,12 @@ For more detailed information, see the commit [03e559c](https://github.com/Felip
 
 ### Improved
 
-Sidebar:
-- The Selection Indicator now starts on the Home Button when the application launches.
-- Group 1 buttons were changed to RadioButtons because they are primarily used for page navigation. This provides a clear indication of the currently selected page, enforces single selection, and simplifies the navigation logic.
-
 Home Section:
-- The Home Button is now selected by default when the application launches.
+- The columns are now more responsive.
+
+Popup:
+- The Profile Popup now displays the profile picture and have an option to change the username.
+- Rows and columns were added to adjust better the objects position.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -164,8 +169,14 @@ Home Section:
 
 ## Roadmap
 
-### Sidebar
+### General
+- [x] Change Name
 - [ ] Change Logo
+- [ ] Change Main Font
+  - [x] Add the New Font
+  - [ ] Make the New Font Default for the Entire Project
+
+### Sidebar
 - [x] Home Button
 - [ ] Library Button
 - [ ] Wishlist Pop-Up
@@ -181,12 +192,16 @@ Home Section:
   - [x] Main Buttons
   - [ ] Selection Indicator
   - [ ] Round the Profile Picture and add a border
-  - [x] Profile Pop-Up
+  - [ ] Profile Pop-Up
+    - [ ] Save Button
+    - [ ] Option to Change Picture
+    - [x] Option to Change Name 
 
 ### Pages
 - [ ] Implement Library
 - [ ] Implement Patch Notes
 - [ ] Implement Performance
+- [ ] Implement Configurations
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -195,11 +210,13 @@ Home Section:
 ## Known Issues
 
 - Page navigation is not fully implemented.
-- 4 sidebar buttons are not functional yet.
+- 4 sidebar buttons are not functional.
 - The Profile Picture is not properly rounded.
 - The application logo is still a placeholder.
-- The "SaveProfile" property is under development and does not work yet.
-- The Profile Popup options are not displayed correctly.
+- The "SaveProfile" property does not have any code yet.
+- The "Save" button is missing on the Popup.
+- The name changing feature does nothing.
+- The added font "Montserrat" is not set as the application default.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 

@@ -217,6 +217,7 @@ Popup:
 - The "Save" button is missing on the Popup.
 - The name changing feature does nothing.
 - The added font "Montserrat" is not set as the application default.
+- The code needs to be optimized and reduced
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 

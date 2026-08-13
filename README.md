@@ -203,6 +203,8 @@ Popup:
 - [ ] Implement Performance
 - [ ] Implement Configurations
 
+See the complete [Roadmap](https://felipeselhorst.github.io/Launcher-Roadmap).
+
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
 <!-- KNOWN ISSUES -->

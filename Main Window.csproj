@@ -28,9 +28,15 @@
     <None Remove="Images\Selection.png" />
     <None Remove="Images\Shop.png" />
     <None Remove="Images\square.avif" />
-    <None Remove="Images\square.jpg" />
     <None Remove="Images\white square.jpg" />
     <None Remove="Images\Wishlist.png" />
+    <None Remove="README Files\Home.png" />
+    <None Remove="README Files\Launcher.gif" />
+    <None Remove="README Files\Library.png" />
+    <None Remove="README Files\Patch Notes.png" />
+    <None Remove="README Files\Performance.png" />
+    <None Remove="README Files\Pop-Ups.png" />
+    <None Remove="README Files\Slowpoke.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,8 +57,18 @@
     <Resource Include="Images\Search.png" />
     <Resource Include="Images\Selection.png" />
     <Resource Include="Images\Shop.png" />
-    <Resource Include="Images\square.jpg" />
     <Resource Include="Images\Wishlist.png" />
+    <Resource Include="README Files\Home.png" />
+    <Resource Include="README Files\Launcher.gif" />
+    <Resource Include="README Files\Library.png" />
+    <Resource Include="README Files\Patch Notes.png" />
+    <Resource Include="README Files\Performance.png" />
+    <Resource Include="README Files\Pop-Ups.png" />
+    <Resource Include="README Files\Slowpoke.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>

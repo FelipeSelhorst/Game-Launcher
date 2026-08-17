@@ -153,7 +153,7 @@
             <Setter Property="FontFamily" Value="Montserrat"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Cursor" Value="Hand"/>
-            
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="RadioButton">
@@ -178,6 +178,79 @@
                     <Setter Property="BorderThickness" Value="2"/>
                 </Trigger>
             </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ProfileButton" TargetType="ToggleButton">
+            <Setter Property="Cursor" Value="Hand"/>
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border x:Name="ProfileBorder"
+                                        CornerRadius="25"
+                                        BorderThickness="2"
+                                        BorderBrush="White">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/Images/PFP.png"/>
+                            </Border.Background>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ProfileBorder"
+                                        Property="BorderBrush"
+                                        Value="#FF0066"/>
+
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="ProfileBorder"
+                                        Property="BorderBrush"
+                                        Value="#FF0066"/>
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SaveButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="170"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="SaveBtnBorder"
+                                CornerRadius="7"
+                                BorderThickness="2"
+                                BorderBrush="White"
+                                Background="Transparent">
+
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter TargetName="SaveBtnBorder"
+                                        Property="BorderBrush"
+                                        Value="#FF0066"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
 
@@ -400,53 +473,58 @@
         
         <!-- Profile Picture -->
 
-        <Button x:Name="ProfileButton"
-                Click="ProfilePopUp"
-                Grid.Column="3"
-                Grid.Row="0"
-                HorizontalAlignment="Right"
-                Width="50"
-                Height="50"
-                Margin="0,0,30,0">
-            <Image Source="/Images/PFP.png"/>
-        </Button>
+        <ToggleButton x:Name="ProfileButton"
+                      Click="ProfilePopUp"
+                      Grid.Column="3"
+                      Grid.Row="0"
+                      HorizontalAlignment="Right"
+                      Width="50"
+                      Height="50"
+                      Margin="0,0,30,0"
+                      Style="{StaticResource ProfileButton}"/>
+
+        <!-- Profile Picture Popup -->
 
         <Popup x:Name="ProfilePopup"
                PlacementTarget="{Binding ElementName=ProfileButton}"
+               IsOpen="{Binding ElementName=ProfileButton, Path=IsChecked}"
                StaysOpen="False"
                AllowsTransparency="True">
-            
+
             <Border Background="#0C0C0F"
                     BorderBrush="#FF0066"
                     BorderThickness="2"
-                    Width="230"
-                    Height="80"
+                    Width="250"
+                    Height="140"
                     CornerRadius="10">
 
                 <Grid Margin="15">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="63"/>
+                        <ColumnDefinition Width="83"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="20"/>
-                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="28"/>
                     </Grid.RowDefinitions>
 
-                    <Image Source="/Images/PFP.png"
+                    <Image x:Name="ProfilePicture"
+                           Source="/Images/PFP.png"
                            Grid.Column="0"
                            Grid.Row="0"
-                           Width="48"
-                           Grid.RowSpan="2"
+                           Width="70"
+                           Grid.RowSpan="3"
                            HorizontalAlignment="Left"
-                           VerticalAlignment="Center"/>
+                           VerticalAlignment="Top"/>
 
                     <TextBlock Foreground="White"
-                               Text="Name"
+                               Text="Nickname"
                                Grid.Column="1"
                                Grid.Row="0"
                                HorizontalAlignment="Left"
-                               Margin="10,0,0,0"
+                               VerticalAlignment="Center"
+                               Margin="7,0,0,0"
                                FontFamily="Montserrat"
                                FontSize="14"
                                FontWeight="SemiBold"/>
@@ -457,11 +535,11 @@
                             Width="133"
                             Height="26"
                             HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
                             CornerRadius="10">
-                        
+
                         <TextBox x:Name="NameInput"
-                                 Foreground="Black"
-                                 VerticalAlignment="Center"
+                                 Foreground="White"
                                  TextChanged="TextBox_TextChanged"
                                  Width="133"
                                  Height="26"
@@ -469,8 +547,16 @@
                                  VerticalContentAlignment="Center"
                                  FontFamily="Montserrat"
                                  FontSize="14"
-                                 FontWeight="SemiBold"/>
+                                 FontWeight="SemiBold"
+                                 Background="#1F1F27"/>
                     </Border>
+
+                    <Button x:Name="SaveButton"
+                            Content="Save Changes"
+                            Grid.ColumnSpan="2"
+                            Grid.Row="2"
+                            HorizontalAlignment="Center"
+                            Style="{StaticResource SaveButton}"/>
                 </Grid>
             </Border>
         </Popup>

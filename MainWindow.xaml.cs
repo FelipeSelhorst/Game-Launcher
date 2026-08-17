@@ -76,7 +76,7 @@ namespace Main_Window
         private void MoveSelection(FrameworkElement button, bool animate = true)
         {
             Point buttonPosition = button.TranslatePoint(
-                new Point(
+                new(
                     button.ActualWidth / 2,
                     button.ActualHeight / 2
                 ),
@@ -97,11 +97,11 @@ namespace Main_Window
                 return;
             }
 
-            var animation = new DoubleAnimation
+            var animation = new DoubleAnimation()
             {
                 To = newPosition,
                 Duration = TimeSpan.FromMilliseconds(200),
-                EasingFunction = new QuadraticEase
+                EasingFunction = new QuadraticEase()
                 {
                     EasingMode = EasingMode.EaseOut
                 }
@@ -120,7 +120,7 @@ namespace Main_Window
 
         //private void ChangeProfilePicture(object sender, MouseButtonEventArgs e)
         //{
-        //    OpenFileDialog dialog = new OpenFileDialog
+        //    OpenFileDialog dialog = new()
         //    {
         //        Title = "Choose a profile picture",
         //        Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
@@ -129,17 +129,10 @@ namespace Main_Window
         //    if (dialog.ShowDialog() == true)
         //    {
         //        ProfileImage.Source = new BitmapImage(
-        //            new Uri(dialog.FileName)
+        //            new(dialog.FileName)
         //        );
         //    }
         //}
-
-        private void SaveProfile(object sender, RoutedEventArgs e)
-        {
-            // string name = NameTextBox.Text;
-            // Implement saving profile logic here
-            ProfilePopup.IsOpen = false;
-        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -151,9 +144,11 @@ namespace Main_Window
             }
         }
 
-        private void Application_Activated(object sender, EventArgs e)
+        private void SaveProfile(object sender, RoutedEventArgs e)
         {
-
+            // string name = NameTextBox.Text;
+            // Implement saving profile logic here
+            ProfilePopup.IsOpen = false;
         }
     }
 }

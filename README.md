@@ -130,7 +130,7 @@ Profile Popup:
 - Centered the input and its label.
 - Added styles and animations to the new button.
 
-For more detailed information, see the commit [d558246](https://github.com/FelipeSelhorst/Game-Launcher/commit/d558246da83b4ec94bcd57c6f6a22a02c86e51f3)
+For more detailed information, see the commit [e548af6](https://github.com/FelipeSelhorst/Game-Launcher/commit/e548af646037fe3adacc755f5f81235d3d36efed)
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 <br>

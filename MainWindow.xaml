@@ -4,145 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Main_Window"
+        xmlns:controls="clr-namespace:Main_Window.Controls"
         mc:Ignorable="d"
         Icon="/Images/Logo.ico"
         Title="Slowpoke Launcher" Height="609" Width="801"
         Background="#0C0C0F" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
+        <!-- Font Family -->
         <FontFamily x:Key="Montserrat">pack://application:,,,/Fonts/Montserrat-Regular.ttf</FontFamily>
         
-        <!-- Radio Button Style -->
-        <Style x:Key="IconRadioButton" TargetType="{x:Type RadioButton}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Width" Value="25"/>
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                        <Border x:Name="border"
-                                Background="{TemplateBinding Background}"
-                                CornerRadius="4">
-                            
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                                
-                                <ContentPresenter.RenderTransform>
-                                    <ScaleTransform x:Name="iconScale"
-                                                    ScaleX="1"
-                                                    ScaleY="1"
-                                                    CenterX="8.5"
-                                                    CenterY="8.5"/>
-                                </ContentPresenter.RenderTransform>
-                            </ContentPresenter>
-                        </Border>
-                        
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Trigger.EnterActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="iconScale"
-                                                             Storyboard.TargetProperty="ScaleX"
-                                                             To="1.2" Duration="0:0:0.15"/>
-                                            <DoubleAnimation Storyboard.TargetName="iconScale"
-                                                             Storyboard.TargetProperty="ScaleY"
-                                                             To="1.2" Duration="0:0:0.15"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.EnterActions>
-                                <Trigger.ExitActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="iconScale"
-                                                             Storyboard.TargetProperty="ScaleX"
-                                                             Duration="0:0:0.15"/>
-                                            <DoubleAnimation Storyboard.TargetName="iconScale"
-                                                             Storyboard.TargetProperty="ScaleY"
-                                                             Duration="0:0:0.15"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.ExitActions>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <!-- Button Style -->
-        <Style x:Key="IconButton" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Width" Value="25"/>
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border"
-                                Background="{TemplateBinding Background}"
-                                CornerRadius="4">
-
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-
-                                <ContentPresenter.RenderTransform>
-                                    <ScaleTransform x:Name="iconScale"
-                                        ScaleX="1"
-                                        ScaleY="1"
-                                        CenterX="8.5"
-                                        CenterY="8.5"/>
-                                </ContentPresenter.RenderTransform>
-                            </ContentPresenter>
-                        </Border>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Trigger.EnterActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="iconScale"
-                                                 Storyboard.TargetProperty="ScaleX"
-                                                 To="1.2" Duration="0:0:0.15"/>
-                                            <DoubleAnimation Storyboard.TargetName="iconScale"
-                                                 Storyboard.TargetProperty="ScaleY"
-                                                 To="1.2" Duration="0:0:0.15"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.EnterActions>
-                                <Trigger.ExitActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Storyboard.TargetName="iconScale"
-                                                 Storyboard.TargetProperty="ScaleX"
-                                                 Duration="0:0:0.15"/>
-                                            <DoubleAnimation Storyboard.TargetName="iconScale"
-                                                 Storyboard.TargetProperty="ScaleY"
-                                                 Duration="0:0:0.15"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.ExitActions>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="SmallIconButton" BasedOn="{StaticResource IconButton}" TargetType="Button">
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
-        </Style>
-
         <!-- Main Buttons Style -->
         <Style x:Key="MainButtons" TargetType="RadioButton">
             <Setter Property="Background" Value="Transparent"/>
@@ -180,6 +51,7 @@
             </Style.Triggers>
         </Style>
 
+        <!-- Profile Button Style -->
         <Style x:Key="ProfileButton" TargetType="ToggleButton">
             <Setter Property="Cursor" Value="Hand"/>
             
@@ -187,12 +59,10 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
                         <Border x:Name="ProfileBorder"
-                                        CornerRadius="25"
-                                        BorderThickness="2"
-                                        BorderBrush="White">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Images/PFP.png"/>
-                            </Border.Background>
+                                CornerRadius="25"
+                                BorderThickness="2"
+                                BorderBrush="White"
+                                Background="{TemplateBinding Background}">
                         </Border>
 
                         <ControlTemplate.Triggers>
@@ -216,6 +86,7 @@
             </Setter>
         </Style>
 
+        <!-- Save Button Style -->
         <Style x:Key="SaveButton" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontFamily" Value="Montserrat"/>
@@ -256,13 +127,18 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="62"/>
+            <!-- Sidebar limitation -->
+            <ColumnDefinition Width="62"
+                              MinWidth="62"
+                              MaxWidth="300"/>
+            
             <ColumnDefinition Width="166"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="168"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <!-- Sidebar Rows -->
             <RowDefinition Height="70"/>
             <RowDefinition Height="59"/>
             <RowDefinition Height="94"/>
@@ -272,180 +148,44 @@
             <RowDefinition Height="85"/>
         </Grid.RowDefinitions>
 
-        <!-- Main Content -->
-        <Grid Grid.Column="1"
-              Grid.RowSpan="7" Grid.ColumnSpan="5">
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="240"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <ContentControl x:Name="MainContent"/>
-        </Grid>
+        <!-- Sidebar Connection -->
+        <controls:Sidebar Grid.Column="0" Grid.RowSpan="7"/>
 
         <!-- Vertical Bar -->
         <GridSplitter Grid.Column="0"
                       Grid.RowSpan="7"
                       Width="2"
                       Background="#1A1A1C"
+                      ResizeDirection="Columns"
                       ResizeBehavior="CurrentAndNext"/>
 
-        <!-- Logo -->
-        <Image Grid.Column="0"
-               Source="/Images/Logo.png"
-               Margin="9,0,9,0"
-               VerticalAlignment="Center" Height="90"/>
+        <!-- Main Content Definition -->
+        <ContentControl x:Name="MainContent"
+                        Grid.Column="1"
+                        Grid.RowSpan="7"
+                        Grid.ColumnSpan="5"/>
 
-        <!-- Navigation Buttons -->
-        <Button Grid.Column="0"
-                Grid.Row="1"
-                Margin="20,18,17,16"
-                Style="{StaticResource IconButton}"
-                Click="LaunchFirefox_Click">
-            <Image Source="/Images/Search.png" Width="17.6" Height="17.6"/>
-        </Button>
-
-        <Border Background="#1A1A1C"
-                BorderBrush="#1A1A1C"
-                BorderThickness="1.5"
-                Width="42"
-                Height="3"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Center"
-                Grid.Row="1"
-                Margin="0,56,0,0"/>
-
-        <!-- Group 1: Home & Library-->
-        <UniformGrid Columns="1"
-                     Rows="2" Grid.Column="0"
-                     Grid.Row="2"
-                     VerticalAlignment="Center"
-                     Height="78">
-
-            <RadioButton x:Name="HomeButton"
-                    Style="{StaticResource IconRadioButton}"
-                    Click="HomeButton_Click">
-                <Image Source="/Images/Home.png" Width="17" Height="17"/>
-            </RadioButton>
-
-            <RadioButton x:Name="LibraryButton"
-                    Style="{StaticResource IconRadioButton}"
-                    Click="LibraryButton_Click">
-                <Image Source="/Images/Library.png" Width="15" Height="15"/>
-            </RadioButton>
-        </UniformGrid>
-
-        <Border Background="#1A1A1C"
-                BorderBrush="#1A1A1C"
-                BorderThickness="1.5" Width="42"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Center"
-                Grid.Row="2" Height="3" Margin="0,91,0,0"/>
-
-        <!-- Group 2: Shop & Wishlist -->
-        <UniformGrid Columns="1"
-                     Rows="2"
-                     Grid.Column="0"
-                     Grid.Row="3"
-                     VerticalAlignment="Center"
-                     Height="78">
-
-            <Button x:Name="ShopButton"
-                    Style="{StaticResource IconButton}"
-                    Click="LaunchSteam_Click">
-                <Image Source="/Images/Shop.png" Width="17" Height="17"/>
-            </Button>
-
-            <Button x:Name="WishlistButton"
-                    Style="{StaticResource IconButton}">
-                <Image Source="/Images/Wishlist.png" Width="17" Height="17"/>
-            </Button>
-        </UniformGrid>
-
-        <Border Background="#1A1A1C"
-                BorderBrush="#1A1A1C"
-                BorderThickness="1.5" Width="42"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Center"
-                Grid.Row="3" Height="3" Margin="0,91,0,0"/>
-
-        <!-- Group 3: Friends & Messages -->
-        <UniformGrid Columns="1"
-                     Rows="2"
-                     Grid.Column="0"
-                     Grid.Row="4"
-                     VerticalAlignment="Center"
-                     Height="78">
-
-            <Button x:Name="FriendsButton"
-                    Style="{StaticResource IconButton}">
-                <Image Source="/Images/Friends.png" Width="17" Height="17"/>
-            </Button>
-
-            <Button x:Name="MessagesButton"
-                    Style="{StaticResource IconButton}"
-                    Click="LaunchDiscord_Click">
-                <Image Source="/Images/Messages.png" Width="17" Height="17"/>
-            </Button>
-        </UniformGrid>
-
-        <!-- Footer: Configs & Quit -->
-        <UniformGrid Columns="1"
-                     Rows="2"
-                     Grid.Column="0"
-                     Grid.Row="6"
-                     VerticalAlignment="Center"
-                     Height="63">
-
-            <RadioButton x:Name="ConfigsButton"
-                    Style="{StaticResource IconRadioButton}"
-                    Click="Configs_Click">
-                <Image Source="/Images/Configs.png" Width="15" Height="15"/>
-            </RadioButton>
-
-            <Button x:Name="QuitButton"
-                    Style="{StaticResource IconButton}"
-                    Click="CloseAppButton">
-                <Image Source="/Images/Quit.png" Width="15" Height="15"/>
-            </Button>
-        </UniformGrid>
-
-        <!-- Selection Indicator -->
-        <Grid x:Name="Sidebar"
-              Grid.Column="0"
-              Grid.RowSpan="7"
-              Panel.ZIndex="100"
-              IsHitTestVisible="False"
-              Margin="10,0,0,0">
-
-            <Border x:Name="SelectionIndicator"
-                    Background="#FF0066"
-                    Width="3"
-                    Height="20"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Left"
-                    Margin="0"
-                    RenderTransformOrigin="0.5,0.5">
-
-                <Border.RenderTransform>
-                    <TranslateTransform x:Name="SelectionTransform"/>
-                </Border.RenderTransform>
-            </Border>
+        <Grid>
+            <!-- Main Content Rows -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="240"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         </Grid>
 
-        <!-- Main Content -->
+        <!-- MAIN CONTENT -->
 
         <!-- Top Message -->
-        <TextBlock Grid.Column="1"
-                   Text="Hello, Felipe!"
+        <TextBlock x:Name="TitleTextBlock"
+                   Grid.Column="1"
                    Foreground="White"
-                   FontSize="20"
+                   FontSize="16"
                    FontWeight="SemiBold"
                    FontFamily="Montserrat"
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center"
+                   Text="Hello, User!"/>
 
         <!-- Patch Notes Button -->
         <RadioButton Grid.Column="2"
@@ -472,7 +212,6 @@
                      GroupName="MainButtons"/>
         
         <!-- Profile Picture -->
-
         <ToggleButton x:Name="ProfileButton"
                       Click="ProfilePopUp"
                       Grid.Column="3"
@@ -484,7 +223,6 @@
                       Style="{StaticResource ProfileButton}"/>
 
         <!-- Profile Picture Popup -->
-
         <Popup x:Name="ProfilePopup"
                PlacementTarget="{Binding ElementName=ProfileButton}"
                IsOpen="{Binding ElementName=ProfileButton, Path=IsChecked}"
@@ -498,6 +236,7 @@
                     Height="140"
                     CornerRadius="10">
 
+                <!-- Popup Definitions -->
                 <Grid Margin="15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="83"/>
@@ -509,15 +248,20 @@
                         <RowDefinition Height="28"/>
                     </Grid.RowDefinitions>
 
-                    <Image x:Name="ProfilePicture"
-                           Source="/Images/PFP.png"
-                           Grid.Column="0"
-                           Grid.Row="0"
-                           Width="70"
-                           Grid.RowSpan="3"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Top"/>
+                    <!-- Profile Picture -->
+                    <Button x:Name="ProfilePicture"
+                            Click="ChangeProfilePicture"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Width="70"
+                            Height="70"
+                            Grid.RowSpan="3"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <Image x:Name="ProfileImage" />
+                    </Button>
 
+                    <!-- Nickname -->
                     <TextBlock Foreground="White"
                                Text="Nickname"
                                Grid.Column="1"
@@ -529,6 +273,7 @@
                                FontSize="14"
                                FontWeight="SemiBold"/>
 
+                    <!-- Name Input -->
                     <Border Background="#1F1F27"
                             Grid.Column="1"
                             Grid.Row="1"
@@ -540,7 +285,6 @@
 
                         <TextBox x:Name="NameInput"
                                  Foreground="White"
-                                 TextChanged="TextBox_TextChanged"
                                  Width="133"
                                  Height="26"
                                  Padding="5,0,0,0"
@@ -551,8 +295,10 @@
                                  Background="#1F1F27"/>
                     </Border>
 
+                    <!-- Save Button -->
                     <Button x:Name="SaveButton"
                             Content="Save Changes"
+                            Click="SaveProfile"
                             Grid.ColumnSpan="2"
                             Grid.Row="2"
                             HorizontalAlignment="Center"

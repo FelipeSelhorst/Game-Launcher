@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,101 +17,23 @@ using System.Windows.Shapes;
 
 namespace Main_Window
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
 
-            Loaded += MainWindow_Loaded;
-        }
+            string nickname = Properties.Settings.Default.Nickname;
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            MoveSelection(HomeButton, false);
-        }
-
-        private void LaunchFirefox_Click(object sender, RoutedEventArgs e) =>
-            OpenApp(@"C:\Program Files\Mozilla Firefox\firefox.exe");
-
-        private void HomeButton_Click(object sender, RoutedEventArgs e) =>
-            MoveSelection(HomeButton);
-
-        private void LibraryButton_Click(object sender, RoutedEventArgs e) =>
-            MoveSelection(LibraryButton);
-
-        private void LaunchSteam_Click(object sender, RoutedEventArgs e) =>
-            OpenApp(@"C:\Program Files (x86)\Steam\steam.exe");
-
-        private void LaunchDiscord_Click(object sender, RoutedEventArgs e) =>
-            OpenApp(@"C:\Users\selho\AppData\Local\Discord\app-1.0.9251\Discord.exe");
-
-        private void Configs_Click(object sender, RoutedEventArgs e) =>
-            MoveSelection(ConfigsButton);
-
-        private void OpenApp(string path)
-        {
-            try
+            if (string.IsNullOrWhiteSpace(nickname))
             {
-                ProcessStartInfo startInfo = new()
-                {
-                    FileName = path,
-                    UseShellExecute = true
-                };
-                Process.Start(startInfo);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to open application: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-        private void CloseAppButton(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void MoveSelection(FrameworkElement button, bool animate = true)
-        {
-            Point buttonPosition = button.TranslatePoint(
-                new(
-                    button.ActualWidth / 2,
-                    button.ActualHeight / 2
-                ),
-                Sidebar
-            );
-
-            double newPosition =
-                buttonPosition.Y - (SelectionIndicator.ActualHeight / 2);
-
-            if (!animate)
-            {
-                SelectionTransform.BeginAnimation(
-                    TranslateTransform.YProperty,
-                    null
-                );
-
-                SelectionTransform.Y = newPosition;
-                return;
+                nickname = "User";
             }
 
-            var animation = new DoubleAnimation()
-            {
-                To = newPosition,
-                Duration = TimeSpan.FromMilliseconds(200),
-                EasingFunction = new QuadraticEase()
-                {
-                    EasingMode = EasingMode.EaseOut
-                }
-            };
+            NameInput.Text = nickname;
+            TitleTextBlock.Text = $"Hello, {nickname}!";
 
-            SelectionTransform.BeginAnimation(
-                TranslateTransform.YProperty,
-                animation
-            );
+            LoadProfilePicture();
         }
 
         private void ProfilePopUp(object sender, RoutedEventArgs e)
@@ -118,36 +41,82 @@ namespace Main_Window
             ProfilePopup.IsOpen = true;
         }
 
-        //private void ChangeProfilePicture(object sender, MouseButtonEventArgs e)
-        //{
-        //    OpenFileDialog dialog = new()
-        //    {
-        //        Title = "Choose a profile picture",
-        //        Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
-        //    };
-
-        //    if (dialog.ShowDialog() == true)
-        //    {
-        //        ProfileImage.Source = new BitmapImage(
-        //            new(dialog.FileName)
-        //        );
-        //    }
-        //}
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void ChangeProfilePicture(object sender, RoutedEventArgs e)
         {
-            TextBox textBox = (sender as TextBox)!;
-
-            if (textBox != null)
+            OpenFileDialog dialog = new()
             {
-                string CurrentText = textBox.Text;
+                Title = "Choose a profile picture",
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                string directory = GetPFPDirectory();
+                string destination = System.IO.Path.Combine(
+                    directory, "profile_picture.png");
+                    //Test: ("profile_picture" + System.IO.Path.GetExtension(dialog.FileName));
+
+                File.Copy(dialog.FileName, destination, true);
+
+                Properties.Settings.Default.ProfilePicturePath = destination;
+                Properties.Settings.Default.Save();
+
+                LoadProfilePicture();
+            }
+        }
+
+        private string GetPFPDirectory()
+        {
+            string directory = System.IO.Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "Slowpoke Launcher",
+                "Profile"
+                );
+
+            Directory.CreateDirectory(directory);
+
+            return directory;
+        }
+
+        private void LoadProfilePicture()
+        {
+            string path = Properties.Settings.Default.ProfilePicturePath;
+
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                BitmapImage image = new BitmapImage();
+
+                image.BeginInit();
+                image.UriSource = new Uri(path);
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                image.EndInit();
+                image.Freeze();
+
+                ProfileImage.Source = image;
+
+                ProfileButton.Background = new ImageBrush
+                {
+                    ImageSource = image,
+                    Stretch = Stretch.UniformToFill
+                };
             }
         }
 
         private void SaveProfile(object sender, RoutedEventArgs e)
         {
-            // string name = NameTextBox.Text;
-            // Implement saving profile logic here
+            string nickname = NameInput.Text;
+
+            if (string.IsNullOrWhiteSpace(nickname))
+            {
+                nickname = "User";
+            }
+
+            Properties.Settings.Default.Nickname = nickname;
+            Properties.Settings.Default.Save();
+
+            TitleTextBlock.Text = $"Hello, {nickname}!";
+
             ProfilePopup.IsOpen = false;
         }
     }

@@ -98,8 +98,7 @@ Home Section:
 - Page title.
 - Stylized header buttons.
 - Profile Popup.
-- Option to change the username.
-- New font added.
+- Option to change the nickname and profile picture.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -110,6 +109,42 @@ Home Section:
 <!-- Version -->
 
 ### Latest Update
+
+Changelog
+
+<h3>Pre-Release v0.4.0-alpha.5.0</h3>
+
+General:
+- Removed more useless files.
+- Removed the function `TextChanged`.
+- Created a dedicated `UserControl` for the sidebar.
+- Changed the sidebar code content from MainWindow (.xaml & .xaml.cs) to Sidebar (.xaml & .xaml.cs).
+- Adapted the sidebar behind-code and grids to its new file.
+- Labeled every XML element to facilitate understanding of the code.
+
+Sidebar:
+- Set a limit on how wide the `GridSplitter` can make the Sidebar be.
+
+Home Section:
+- Changed the profile picture placeholder to the one selected by the user.
+- Changed the page title text to the placeholder "Hello, User!" in cases where the user has not chosen a nickname.
+- Made the page title display the selected nickname alongside its content.
+- Reduced the page title's font size to fit better the screen.
+
+Pop-Up:
+- Changed the profile `<Image>` to a `Button`.
+- Created a function to change the profile picture.
+- Created a function to get the selected profile picture directory and save a local copy on %LOCALAPPDATA%/Slowpoke Launcher/Profile.
+- The nickname feature was changed to also be able to save locally.
+- Created a function to load locally saved information and display them even after a restart.
+- Finished the function `SaveProfile` and attached it to its button.
+
+For more detailed information, see the commit [9e8864b](https://github.com/FelipeSelhorst/Game-Launcher/commit/9e8864b88e98f0bb3b02fec66ff365ea1f193238).
+
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
+<br>
+
+### Previous Update
 
 <h3>Pre-Release v0.3.0-alpha.4.0</h3>
 
@@ -133,46 +168,23 @@ Profile Popup:
 For more detailed information, see the commit [e548af6](https://github.com/FelipeSelhorst/Game-Launcher/commit/e548af646037fe3adacc755f5f81235d3d36efed)
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
-<br>
-
-### Previous Update
-
-<h3>Pre-Release v0.2.1-alpha.3.0</h3>
-
-General:
-- Added the font "Montserrat" to the project.
-
-Home Section:
-- Changed the page title and buttons font.
-- Corrected the column widths.
-- Corrected the issue where the profile button was not displaying the image correctly.
-
-Profile Popup:
-- Corrected the issue where the popup was not displaying anything.
-- Increased the size.
-- Added columns and rows.
-- Added the profile picture to the left.
-- Added a `<TextBlock>` to label the "Name" field.
-- Added an input to change the username.
-
-For more detailed information, read the commit [bb76571](https://github.com/FelipeSelhorst/Game-Launcher/commit/bb76571b9d385b8a011cbb6eb45701c6bab67125)
-
-<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
 <!-- IMPROVED -->
 
 ### Improved
 
 General:
-- Reduced the application's folder size.
+- Improved the performance by separating the Sidebar from the MainWindow.
 
 Home Section:
 - The profile picture is rounded and features visual indicators showing that it can and has been selected.
+- Now the displayed profile picture is the one selected by the user.
+- The page title now displays the nickname alongside its content.
 
 Popup:
-- Added the missing "Save Changes" button.
-- Added a new row exclusively for the new button.
-- Increased sizes and centered the elements.
+- Finished the `SaveProfile` function.
+- Added an option to change the profile picture and save it locally.
+- Now the nickname is saved and displayed whenever the application is open.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -205,18 +217,20 @@ Popup:
   - [x] Main Buttons
   - [ ] Selection Indicator
   - [x] Round the Profile Picture and add a border
-  - [ ] Profile Pop-Up
+  - [x] Profile Pop-Up
     - [x] Save Button
-    - [ ] Option to Change Picture
+    - [x] Option to Change Picture
     - [x] Option to Change Name
 
 ### Pages
-- [ ] Change Home code for its actual file.
+- [x] Change Sidebar to UserControl.
+- [ ] Change Home to UserControl.
 - [ ] Implement Library
 - [ ] Implement Patch Notes
 - [ ] Implement Performance
 - [ ] Implement Configurations
 
+<br>
 Please consider taking a look at the [Roadmap Website](https://felipeselhorst.github.io/Launcher-Roadmap) to see what we are currently working on, every shipped feature and planned ideas.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
@@ -227,8 +241,6 @@ Please consider taking a look at the [Roadmap Website](https://felipeselhorst.gi
 
 **Sorted by Expected Fix**
 
-- The `SaveProfile` property has not been implemented yet.
-- The name-changing feature is not functional.
 - The application logo is still a placeholder.
 - Page navigation is not fully implemented.
 - Four sidebar buttons are not functional.

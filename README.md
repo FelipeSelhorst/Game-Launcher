@@ -110,8 +110,6 @@ Home Section:
 
 ### Latest Update
 
-Changelog
-
 <h3>Pre-Release v0.4.0-alpha.5.0</h3>
 
 General:

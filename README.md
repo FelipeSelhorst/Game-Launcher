@@ -3,7 +3,7 @@
 <a id="readme-top"></a>
 
 <div align=center>
-  <img width="160" height="160" alt="079" src="https://github.com/user-attachments/assets/b7fbea7d-d883-49d1-a266-d70c613ea77a" />
+  <img width="160" height="160" alt="079" src="README Files/Slowpoke.png" />
   <br>
   <h1>Slowpoke Launcher</h1>
   <br>
@@ -34,7 +34,7 @@
     <ul>
       <li><a href="#latest-update">Latest Update</a></li>
       <li><a href="#previous-update">Previous Update</a></li>
-      <li><a href="#improved">improved</a></li>
+      <li><a href="#improved">Improved</a></li>
     </ul>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#known-issues">Known Issues</a></li>
@@ -60,21 +60,23 @@ Slowpoke is currently in the early prototyping stage. The main focus is on build
 
 <!-- GIF FROM NOW -->
 
-<img width="397" height="304.5" alt="image" src="https://github.com/user-attachments/assets/6d2b1e53-f9d7-43ec-8bd8-831b43dd1b51"/><br>
-The current prototype includes the sidebar, Home page navigation, animated selection indicators, and the initial Home layout.
+<img width="397" height="304.5" alt="gif" src="README Files/Launcher.gif"/><br>
+*Gif of the current state.*
+
+The current protorype includes the sidebar, Home page layout, animated selection indicators, and a profile popup to change the user's nickname.
 <br>
 <br>
 <br>
-<img width="400.5" height="304.5" alt="Home" src="https://github.com/user-attachments/assets/c49c8c4e-e340-4a39-b294-e11899a19a07"/><br>
-*Early home page prototype. Some elements shown are planned rather than implemented.*
+<img width="400.5" height="304.5" alt="Home Prototype" src="README Files/Home.png"/><br>
+*Early home page prototype. Some elements shown are planned and not yet implemented. The design and features are subject to change.*
 
 <!-- CORRECT USAGE -->
 
 ### How To Use It
 
-The project is currently being tested using real file paths to validate its core launcher functionality.
+The project is currently on its pre-release alpha and being tested to validate its core functionality as a Game Launcher.
 
-A downloadable version is not available yet. For now, development is focused on validating the underlying workflow and interface before preparing a usable release.
+A downloadable version is not available until the official release (TBA). For now, development is focused on validating the underlying workflow and interface before preparing a public release.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -90,6 +92,7 @@ Sidebar:
 - Stylized and animated buttons.
 - Animated Selection Indicator.
 - Adjustable vertical bar size.
+- Exit button.
 
 Home Section:
 - Page title.
@@ -108,6 +111,32 @@ Home Section:
 
 ### Latest Update
 
+<h3>Pre-Release v0.3.0-alpha.4.0</h3>
+
+General:
+- Useless files were deleted.
+
+Home Section:
+- Rounded the profile picture.
+- Added a stylized border around the profile button.
+- Changed the profile button to `ToggleButton`.
+
+Profile Popup:
+- Changed the text over the input from "Name" to "Nickname" and aligned it to the input text.
+- Changed the background and text color of the nickname input field.
+- Changed the popup size and added a new row to the bottom.
+- Added the button "Save Changes" to the new row.
+- Increased the profile image size.
+- Centered the input and its label.
+- Added styles and animations to the new button.
+
+For more detailed information, see the commit [e548af6](https://github.com/FelipeSelhorst/Game-Launcher/commit/e548af646037fe3adacc755f5f81235d3d36efed)
+
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
+<br>
+
+### Previous Update
+
 <h3>Pre-Release v0.2.1-alpha.3.0</h3>
 
 General:
@@ -119,8 +148,6 @@ Home Section:
 - Corrected the issue where the profile button was not displaying the image correctly.
 
 Profile Popup:
-
-/// The previous lines regarding the popup did not work, so they were deleted. ///
 - Corrected the issue where the popup was not displaying anything.
 - Increased the size.
 - Added columns and rows.
@@ -131,37 +158,21 @@ Profile Popup:
 For more detailed information, read the commit [bb76571](https://github.com/FelipeSelhorst/Game-Launcher/commit/bb76571b9d385b8a011cbb6eb45701c6bab67125)
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
-<br>
-
-### Previous Update
-
-<h3>Pre-Release v0.2.0-alpha.2.0</h3>
-
-General:
-- Changed the application name to "Slowpoke Launcher".
-
-Sidebar:
-- Changed the Configs button to RadioButton.
-- Extended the Selection Indicator to include Configs Button.
-
-Home Section:
-- Replaced the profile picture with a button that opens a profile popup.
-- Added an option for changing the username.
-
-For more detailed information, see the commit [ef9d055](https://github.com/FelipeSelhorst/Game-Launcher/commit/ef9d0551b28ec9fa79e78f68df0d034a0d594ebf).
-
-<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
 <!-- IMPROVED -->
 
 ### Improved
 
+General:
+- Reduced the application's folder size.
+
 Home Section:
-- The columns are now more responsive.
+- The profile picture is rounded and features visual indicators showing that it can and has been selected.
 
 Popup:
-- The Profile Popup now displays the profile picture and have an option to change the username.
-- Rows and columns were added to adjust better the objects position.
+- Added the missing "Save Changes" button.
+- Added a new row exclusively for the new button.
+- Increased sizes and centered the elements.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -180,9 +191,11 @@ Popup:
 - [x] Home Button
 - [ ] Library Button
 - [ ] Wishlist Pop-Up
+  - [ ] Change to ToggleButton
 - [ ] Friends Pop-Up
+  - [ ] Change to ToggleButton
 - [ ] Configs Button
-  - [x] Turn into RadioButton
+  - [x] Turn to RadioButton
 - [x] Exit Button
 - [x] Selection Indicator
 
@@ -191,19 +204,20 @@ Popup:
   - [x] Page title
   - [x] Main Buttons
   - [ ] Selection Indicator
-  - [ ] Round the Profile Picture and add a border
+  - [x] Round the Profile Picture and add a border
   - [ ] Profile Pop-Up
-    - [ ] Save Button
+    - [x] Save Button
     - [ ] Option to Change Picture
-    - [x] Option to Change Name 
+    - [x] Option to Change Name
 
 ### Pages
+- [ ] Change Home code for its actual file.
 - [ ] Implement Library
 - [ ] Implement Patch Notes
 - [ ] Implement Performance
 - [ ] Implement Configurations
 
-See the complete [Roadmap](https://felipeselhorst.github.io/Launcher-Roadmap).
+Please consider taking a look at the [Roadmap Website](https://felipeselhorst.github.io/Launcher-Roadmap) to see what we are currently working on, every shipped feature and planned ideas.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -211,15 +225,17 @@ See the complete [Roadmap](https://felipeselhorst.github.io/Launcher-Roadmap).
 
 ## Known Issues
 
-- Page navigation is not fully implemented.
-- 4 sidebar buttons are not functional.
-- The Profile Picture is not properly rounded.
+**Sorted by Expected Fix**
+
+- The `SaveProfile` property has not been implemented yet.
+- The name-changing feature is not functional.
 - The application logo is still a placeholder.
-- The "SaveProfile" property does not have any code yet.
-- The "Save" button is missing on the Popup.
-- The name changing feature does nothing.
-- The added font "Montserrat" is not set as the application default.
-- The code needs to be optimized and reduced
+- Page navigation is not fully implemented.
+- Four sidebar buttons are not functional.
+- The added font, "Montserrat", is not set as the application default.
+- The code needs to be optimized and cleaned up.
+
+Issues that are easier or quicker to address are more likely to be fixed in the next update. More complex issues may be addressed in future larger updates.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 

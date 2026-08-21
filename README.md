@@ -42,6 +42,16 @@
   </ol>
 </details>
 
+<!-- HIATUS -->
+
+# HIATUS
+
+We are pausing development for a while. Lately, building this launcher has hit a few snags due to my own ongoing learning curve with C# and XAML, and I need to step back for a moment to catch up and build my confidence to guarantee a well-developed application.
+
+We don't expect this hiatus to last indefinitely, but upcoming features will be delayed by at least a quarter. Thank you for your patience and support.
+
+We'll post another update when things kick back into gear.
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project

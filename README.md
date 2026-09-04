@@ -120,7 +120,7 @@ Header:
 Development is tracked through the [Roadmap Website](https://launcher-roadmap.vercel.app/), which contains current work, shipped features, and planned ideas.
 
 ### General
-- [x] Change project name
+- [ ] Give a name to the project
 - [ ] Change logo
 - [ ] Change main font
   - [x] Add the font Montserrat

@@ -3,9 +3,9 @@
 <a id="readme-top"></a>
 
 <div align=center>
-  <img width="160" height="160" alt="079" src="README Files/Slowpoke.png" />
+  <img width="207" height="200" alt="gato guerra" src="https://github.com/user-attachments/assets/7fa965b5-7c95-4fcb-951b-56679be041f8" />
   <br>
-  <h1>Slowpoke Launcher</h1>
+  <h1>Game Launcher</h1>
   <br>
   <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"> <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white"> <img src="https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white">
 </div>
@@ -42,41 +42,55 @@
   </ol>
 </details>
 
+<!-- HIATUS -->
+
+# HIATUS
+
+We are pausing development for a while. Lately, building this launcher has hit a few snags due to my own ongoing learning curve with C# and XAML, and I need to step back for a moment to catch up and build my confidence to guarantee a well-developed application.
+
+We don't expect this hiatus to last indefinitely, but upcoming features will be delayed by at least a quarter. Thank you for your patience and support.
+
+We'll post another update when things kick back into gear.
+<br>
+<br>
+<br>
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-Slowpoke is an open-source, customizable launcher for games and everything around them.
+An open-source, customizable launcher that brings games, applications, friends, news, hardware information, and other gaming-related content together in one place.
 
-What started as a launcher I made for myself is becoming a project that anyone can customize. The goal is to bring games, applications, friends, news, hardware, and other gaming-related content together in one place.
-
-Because Slowpoke is open source, its interface and functionality can be changed and expanded to fit different needs.
+Its open architecture allows the interface and functionality to be freely customized and extended to fit different needs.
 
 <!-- CURRENT STATE -->
 
 ### Current State
 
-Slowpoke is currently in the early prototyping stage. The main focus is on building and testing the launcher's core interface and navigation before moving on to more advanced functionality and customization.
+The project is currently in early pre-release development, with the focus on building and validating the launcher's core interface and navigation.
+
+The current prototype includes the sidebar, header layout, animated selection indicators and a profile popup for changing the user's nickname and profile picture.
 
 <!-- GIF FROM NOW -->
 
-<img width="397" height="304.5" alt="gif" src="README Files/Launcher.gif"/><br>
+<img width="400.5" height="304.5" alt="gif" src="README Files/Launcher.gif"/><br>
 *Gif of the current state.*
+<br>
+<br>
+<br>
 
-The current protorype includes the sidebar, Home page layout, animated selection indicators, and a profile popup to change the user's nickname.
-<br>
-<br>
-<br>
-<img width="400.5" height="304.5" alt="Home Prototype" src="README Files/Home.png"/><br>
-*Early home page prototype. Some elements shown are planned and not yet implemented. The design and features are subject to change.*
+<!-- HOME PAGE PROTOTYPE -->
+
+<img width="400.5" height="304.5" alt="Home" src="README Files/Home.png" /><br>
+*Home page design prototype. Some elements shown are planned and not yet implemented. The design and features are subject to change.*
 
 <!-- CORRECT USAGE -->
 
 ### How To Use It
 
-The project is currently on its pre-release alpha and being tested to validate its core functionality as a Game Launcher.
+The project is currently in pre-release alpha and is not yet available as a public download.
 
-A downloadable version is not available until the official release (TBA). For now, development is focused on validating the underlying workflow and interface before preparing a public release.
+Development is focused on validating the core interface and workflow before an official release. <strong>Release date: TBA<strong>.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -89,17 +103,49 @@ A downloadable version is not available until the official release (TBA). For no
 ### Current Features
 
 Sidebar:
-- Stylized and animated buttons.
-- Animated Selection Indicator.
-- Adjustable vertical bar size.
-- Exit button.
+- Stylized and animated buttons
+- Animated selection indicator
+- Adjustable width
+- Exit button
 
-Home Section:
-- Page title.
-- Stylized header buttons.
-- Profile Popup.
-- Option to change the username.
-- New font added.
+Header:
+- Page title
+- Profile Popup
+- Profile picture customization
+- Local profile data persistence
+
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+Development is tracked through the [Roadmap Website](https://launcher-roadmap.vercel.app/), which contains current work, shipped features, and planned ideas.
+
+### General
+- [ ] Give a name to the project
+- [ ] Change logo
+- [ ] Change main font
+  - [x] Add the font Montserrat
+  - [ ] Make the new font default in the entire application
+- [ ] Move each attribute to its own file
+
+### Sidebar
+- [x] Home
+- [ ] Library
+- [ ] Wishlist
+- [ ] Friends
+- [ ] Configurations
+- [x] Exit
+- [x] Selection indicator
+
+### Pages
+- [x] Change Sidebar to `UserControl`
+- [ ] Change Home to `UserControl`
+- [ ] Implement Library
+- [ ] Implement Patch Notes
+- [ ] Implement Performance
+- [ ] Implement Configurations
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
@@ -110,6 +156,24 @@ Home Section:
 <!-- Version -->
 
 ### Latest Update
+
+<h3>Pre-Release v0.4.0-alpha.5.0</h3>
+
+- Refactored the Sidebar into its own `UserControl`.
+- Added persistent profile data.
+- Added profile picture selection and local storage.
+- Added nickname persistence and display.
+- Improved the page title and profile integration.
+- Added width limits to the Sidebar.
+- Cleaned up unused files and code.
+- Added XML labels throughout the interface to improve code readability.
+
+For the complete development history, see the commit [9e8864b](https://github.com/FelipeSelhorst/Game-Launcher/commit/9e8864b88e98f0bb3b02fec66ff365ea1f193238).
+
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
+<br>
+
+### Previous Update
 
 <h3>Pre-Release v0.3.0-alpha.4.0</h3>
 
@@ -133,107 +197,34 @@ Profile Popup:
 For more detailed information, see the commit [e548af6](https://github.com/FelipeSelhorst/Game-Launcher/commit/e548af646037fe3adacc755f5f81235d3d36efed)
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
-<br>
-
-### Previous Update
-
-<h3>Pre-Release v0.2.1-alpha.3.0</h3>
-
-General:
-- Added the font "Montserrat" to the project.
-
-Home Section:
-- Changed the page title and buttons font.
-- Corrected the column widths.
-- Corrected the issue where the profile button was not displaying the image correctly.
-
-Profile Popup:
-- Corrected the issue where the popup was not displaying anything.
-- Increased the size.
-- Added columns and rows.
-- Added the profile picture to the left.
-- Added a `<TextBlock>` to label the "Name" field.
-- Added an input to change the username.
-
-For more detailed information, read the commit [bb76571](https://github.com/FelipeSelhorst/Game-Launcher/commit/bb76571b9d385b8a011cbb6eb45701c6bab67125)
-
-<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
 <!-- IMPROVED -->
 
 ### Improved
 
 General:
-- Reduced the application's folder size.
+- Improved performance by separating the Sidebar from the MainWindow.
 
 Home Section:
 - The profile picture is rounded and features visual indicators showing that it can and has been selected.
+- Now the displayed profile picture is the one selected by the user.
+- The page title now displays the nickname alongside its content.
 
 Popup:
-- Added the missing "Save Changes" button.
-- Added a new row exclusively for the new button.
-- Increased sizes and centered the elements.
-
-<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-### General
-- [x] Change Name
-- [ ] Change Logo
-- [ ] Change Main Font
-  - [x] Add the New Font
-  - [ ] Make the New Font Default for the Entire Project
-
-### Sidebar
-- [x] Home Button
-- [ ] Library Button
-- [ ] Wishlist Pop-Up
-  - [ ] Change to ToggleButton
-- [ ] Friends Pop-Up
-  - [ ] Change to ToggleButton
-- [ ] Configs Button
-  - [x] Turn to RadioButton
-- [x] Exit Button
-- [x] Selection Indicator
-
-### Home Section
-- [ ] Header
-  - [x] Page title
-  - [x] Main Buttons
-  - [ ] Selection Indicator
-  - [x] Round the Profile Picture and add a border
-  - [ ] Profile Pop-Up
-    - [x] Save Button
-    - [ ] Option to Change Picture
-    - [x] Option to Change Name
-
-### Pages
-- [ ] Change Home code for its actual file.
-- [ ] Implement Library
-- [ ] Implement Patch Notes
-- [ ] Implement Performance
-- [ ] Implement Configurations
-
-Please consider taking a look at the [Roadmap Website](https://felipeselhorst.github.io/Launcher-Roadmap) to see what we are currently working on, every shipped feature and planned ideas.
+- Finished the `SaveProfile` function.
+- Added an option to change the profile picture and save it locally.
+- Now the nickname is saved and displayed whenever the application is open.
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 
 <!-- KNOWN ISSUES -->
 
 ## Known Issues
-
-**Sorted by Expected Fix**
-
-- The `SaveProfile` property has not been implemented yet.
-- The name-changing feature is not functional.
 - The application logo is still a placeholder.
 - Page navigation is not fully implemented.
-- Four sidebar buttons are not functional.
-- The added font, "Montserrat", is not set as the application default.
-- The code needs to be optimized and cleaned up.
+- Several sidebar buttons are not yet functional.
+- Montserrat is not set yet as the application-wide default font.
+- The codebase still needs further optimization and cleanup.
 
 Issues that are easier or quicker to address are more likely to be fixed in the next update. More complex issues may be addressed in future larger updates.
 

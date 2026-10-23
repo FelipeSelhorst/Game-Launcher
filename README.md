@@ -78,6 +78,8 @@ The current prototype includes the sidebar, header layout, animated selection in
 <br>
 <br>
 <br>
+<img width="400.5" height="304.5" alt="Home Prototype" src="README Files/Home.png"/><br>
+*Early home page prototype. Some elements shown are planned and not yet implemented. The design and features are subject to change.*
 
 <!-- HOME PAGE PROTOTYPE -->
 
@@ -157,24 +159,6 @@ Development is tracked through the [Roadmap Website](https://launcher-roadmap.ve
 
 ### Latest Update
 
-<h3>Pre-Release v0.4.0-alpha.5.0</h3>
-
-- Refactored the Sidebar into its own `UserControl`.
-- Added persistent profile data.
-- Added profile picture selection and local storage.
-- Added nickname persistence and display.
-- Improved the page title and profile integration.
-- Added width limits to the Sidebar.
-- Cleaned up unused files and code.
-- Added XML labels throughout the interface to improve code readability.
-
-For the complete development history, see the commit [9e8864b](https://github.com/FelipeSelhorst/Game-Launcher/commit/9e8864b88e98f0bb3b02fec66ff365ea1f193238).
-
-<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
-<br>
-
-### Previous Update
-
 <h3>Pre-Release v0.3.0-alpha.4.0</h3>
 
 General:
@@ -195,6 +179,31 @@ Profile Popup:
 - Added styles and animations to the new button.
 
 For more detailed information, see the commit [e548af6](https://github.com/FelipeSelhorst/Game-Launcher/commit/e548af646037fe3adacc755f5f81235d3d36efed)
+
+<p align="right">(<a href="#readme-top">Back To Top</a>)</p>
+<br>
+
+### Previous Update
+
+<h3>Pre-Release v0.2.1-alpha.3.0</h3>
+
+General:
+- Added the font "Montserrat" to the project.
+
+Home Section:
+- Changed the page title and buttons font.
+- Corrected the column widths.
+- Corrected the issue where the profile button was not displaying the image correctly.
+
+Profile Popup:
+- Corrected the issue where the popup was not displaying anything.
+- Increased the size.
+- Added columns and rows.
+- Added the profile picture to the left.
+- Added a `<TextBlock>` to label the "Name" field.
+- Added an input to change the username.
+
+For more detailed information, read the commit [bb76571](https://github.com/FelipeSelhorst/Game-Launcher/commit/bb76571b9d385b8a011cbb6eb45701c6bab67125)
 
 <p align="right">(<a href="#readme-top">Back To Top</a>)</p>
 

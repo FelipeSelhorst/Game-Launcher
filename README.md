@@ -78,8 +78,6 @@ The current prototype includes the sidebar, header layout, animated selection in
 <br>
 <br>
 <br>
-<img width="400.5" height="304.5" alt="Home Prototype" src="README Files/Home.png"/><br>
-*Early home page prototype. Some elements shown are planned and not yet implemented. The design and features are subject to change.*
 
 <!-- HOME PAGE PROTOTYPE -->
 

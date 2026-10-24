@@ -44,6 +44,7 @@
 
 <!-- HIATUS -->
 
+<!--
 # HIATUS
 
 We are pausing development for a while. Lately, building this launcher has hit a few snags due to my own ongoing learning curve with C# and XAML, and I need to step back for a moment to catch up and build my confidence to guarantee a well-developed application.
@@ -54,6 +55,7 @@ We'll post another update when things kick back into gear.
 <br>
 <br>
 <br>
+-->
 
 <!-- ABOUT THE PROJECT -->
 
@@ -78,13 +80,11 @@ The current prototype includes the sidebar, header layout, animated selection in
 <br>
 <br>
 <br>
-<img width="400.5" height="304.5" alt="Home Prototype" src="README Files/Home.png"/><br>
-*Early home page prototype. Some elements shown are planned and not yet implemented. The design and features are subject to change.*
 
 <!-- HOME PAGE PROTOTYPE -->
 
-<img width="400.5" height="304.5" alt="Home" src="README Files/Home.png" /><br>
-*Home page design prototype. Some elements shown are planned and not yet implemented. The design and features are subject to change.*
+<img width="400.5" height="304.5" alt="Home Prototype" src="README Files/Home.png"/><br>
+*Early home page prototype. Some elements shown are planned and not yet implemented. The design and features are subject to change.*
 
 <!-- CORRECT USAGE -->
 
